@@ -9,8 +9,20 @@
 
 package main
 
-import "fmt"
+import (
+	"fmt"
+	"log"
+
+	"github.com/thersanchez/sum3cubes/pkg/sum3cubes"
+)
 
 func main() {
-	fmt.Println("TO DO")
+	results, err := sum3cubes.Do(2)
+	if err != nil {
+		log.Fatal(err)
+	}
+	for i, r := range results {
+		// TODO: calculate indentation based on biggest number
+		fmt.Printf("%5d: %v\n", i, r)
+	}
 }
